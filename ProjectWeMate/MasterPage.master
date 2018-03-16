@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Src="~/banner2.ascx" TagPrefix="uc1" TagName="banner2" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="style/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Script/jQuery/jquery-3.1.0.min.js"></script>
+    <title></title>
+      <style type="text/css">
+
+          #form1{
+
+             background-color :#aa80ff;
+          }
+        
+        .FullPage{
+            width:80%;
+            margin: 0 auto;
+            padding:1px;
+           
+
+        }
+        .auto-style1 {
+            width:100%;
+            height:auto;
+        }
+       
+        #menuID {
+            width:20%;
+            vertical-align:top;
+        }
+
+        .HeadStyle{
+            font-size:xx-large;
+            background-image:url('https://image.shutterstock.com/z/stock-photo-group-of-people-who-interact-in-chat-or-live-messenger-white-background-and-reflection-28150081.jpg');
+            background-size: 100% 100%;
+            background-size: cover;
+            color:red;
+            text-align:center;
+            padding: 25px;
+        }
+
+        .FooterStyle{
+            font-size:small;
+            background-color:#4d0000;
+            color: #ffffff;
+            padding:2px;
+            text-align:center;
+        }
+        .middleStyle{
+             background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6m-IYlJ47US2hjJ9iiQENCraByjZipE-bh9GOx4r-FfHf4RKeBw');
+            background-size: 100% 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:10px;
+            height:620px;
+         
+        }
+
+    </style>
+  
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+        <div class="FullPage">
+            <table class="auto-style1">
+                <tr>
+                    <td colspan="2" class="HeadStyle">
+                       <uc1:banner2 runat="server" ID="banner2" /> 
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Main Part-->
+                    <td id="menuID" class="middleStyle">
+                        <div>
+                            <asp:ContentPlaceHolder ID="MenuContentHolder" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                    <td class="middleStyle" style="background-image:url('https://image.shutterstock.com/z/stock-photo-group-of-people-who-interact-in-chat-or-live-messenger-white-background-and-reflection-28150081.jpg');background-size: 100% 100%;background-size: cover;">
+                        <div>
+                            <asp:ContentPlaceHolder ID="MainContentHolder" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="FooterStyle">CopyRight</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
